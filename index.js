@@ -13,7 +13,8 @@ app.use(express.json())
 // 9XyhBNOHgJIkkE3k scic-task
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://scic-task:9XyhBNOHgJIkkE3k@cluster0.szfaclu.mongodb.net/?retryWrites=true&w=majority";
+
+const uri = "mongodb+srv://apusaha:2uD6QS3ocmuse7M0@cluster0.nwqbhj7.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -27,7 +28,7 @@ const client = new MongoClient(uri, {
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        // await client.connect();
 
         // database 
         const database = client.db('task_manager');
@@ -106,9 +107,9 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('task managment server is running now')
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`task managment app live on port ${port}`)
 })
